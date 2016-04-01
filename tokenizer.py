@@ -67,7 +67,7 @@ def test():
         fmt = lambda _ : print(_, end = "")
     for s in ss:
         fmt("[")
-        fmt(",".join(w for w in s))
+        fmt(", ".join(w for w in s))
         fmt("]\n")
 
 if __name__ == "__main__":
