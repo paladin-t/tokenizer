@@ -44,10 +44,13 @@ class Tokenizer:
             else:
                 if i == 1 and not got:
                     tail = s[i : ]
-                    tails = self.getSentences(tail)
-                    for it in tails:
-                        it.insert(0, head)
-                        yield it
+                    if not tail:
+                        yield [head]
+                    else:
+                        tails = self.getSentences(tail)
+                        for it in tails:
+                            it.insert(0, head)
+                            yield it
 
 def test():
     tk = Tokenizer()
